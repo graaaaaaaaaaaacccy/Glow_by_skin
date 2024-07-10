@@ -494,30 +494,30 @@ input {
                             <div class="child-detail-inner">
                               
                                 <div class="child-fields1">
-                                    <input type="text" style="color: #676767;" placeholder="First Name">
+                                    <input type="text" style="color: #676767;">
                                 </div>
                                 <div class="child-fields3">
-                                    <input type="text" style="color: #676767;" placeholder="Last Name">
+                                    <input type="text" style="color: #676767;">
                                 </div>
 
                             </div>
                             <div class="child-detail-inner">
                               
                                 <div class="child-fields child-fields4">
-                                    <input type="text" placeholder="P-134">
+                                    <input type="text">
                                 </div>
                                 <div class="child-fields child-fields5 ">
-                                    <input type="text" placeholder="A5">
+                                    <input type="text">
                                 </div>
 
                             </div>
                             <div class="child-detail-inner">
                               
                                 <div class="child-fields child-fields6">
-                                    <input type="text" placeholder="Manchester">
+                                    <input type="text">
                                 </div>
                                 <div class="child-fields child-fields7 ">
-                                    <input type="text" placeholder="38000">
+                                    <input type="text">
                                 </div>
 
                             </div>
@@ -525,7 +525,7 @@ input {
                             <div class="child-detail-inner">
                               
                                 <div class="child-fields Address-field">
-                                    <input type="text" style="color: #676767;" placeholder="United kingdom">
+                                    <input type="text" style="color: #676767;">
                                   
                                 </div>
 
@@ -535,10 +535,10 @@ input {
                             <div class="child-detail-inner">
                               
                                 <div class="child-fields child-fields8">
-                                    <input type="text" placeholder="+1 0000-0000-0000">
+                                    <input type="text">
                                 </div>
                                 <div class="child-fields child-fields9">
-                                    <input type="text" placeholder="example@email.com">
+                                    <input type="text">
                                 </div>
 
                             </div>

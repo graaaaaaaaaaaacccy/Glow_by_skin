@@ -51,7 +51,7 @@
                   Welcome To <span id="about-title"><?php echo $_SESSION['web-name'];?></span>
                   </h2>
                   <p>
-                    <strong id="about-title"> <?php echo $_SESSION['web-name']; ?></strong> is a Professional eCommerce Platform. Here we will provide you only interesting content, which you will like very much. We're dedicated to providing you the best of eCommerce, with a focus on dependability and Online Selling. We're working to turn our passion for eCommerce into a booming online website. We hope you enjoy our eCommerce as much as we enjoy offering them to you.
+                    <strong id="about-title"> <?php echo $_SESSION['web-name']; ?></strong>Welcome to Glow by Skin, your ultimate online system for achieving radiant and healthy skin. We understand that skincare is not one-size-fits-all, which is why we've crafted a personalized platform designed to cater to your unique skincare needs.
                   </p>
                   <p style="font-weight: bold; text-align: center;">
                     Thanks For Visiting To <strong id="about-title"> <?php echo $_SESSION['web-name']; ?></strong>

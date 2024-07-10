@@ -23,7 +23,7 @@
   include "includes/config.php";
 
   // todo: work with those categories catagory
-$catagory_list = ['men', 'women', 'kids', 'electronics', 'home', 'sports', 'beauty', 'furniture', 'books', 'stationary', 'grocery', 'other'];
+$catagory_list = ['men', 'women', 'kids', 'other'];
 
 for($i=0; $i<sizeof($catagory_list); $i++){
     $sn = $i+1;

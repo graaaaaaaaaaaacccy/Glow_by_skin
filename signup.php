@@ -65,7 +65,6 @@
             class="form-control"
             name="name"
             required="required"
-            placeholder="Full Name..."
           />
         </div>
         <div class="col-md-6">
@@ -75,7 +74,6 @@
             class="form-control"
             name="number"
             required="required"
-            placeholder="+92 123 456 789 1"
           />
         </div>
         <div class="col-md-6">
@@ -84,7 +82,6 @@
           type="email" 
           class="form-control"
           name="email"
-          placeholder="Email"
           required="required"
            />
         </div>
@@ -95,7 +92,6 @@
             class="form-control"
             name="address"
             required="required"
-            placeholder="1234 Main St"
           />
         </div>
 
@@ -105,7 +101,6 @@
             type="password"
             class="form-control"
             name="pwd"
-            placeholder="password"
             required="required" />
         </div>
         <div class="col-md-6">
@@ -116,7 +111,6 @@
           type="password" 
           class="form-control" 
           name="rpwd"
-          placeholder="Confirm Password"
           required="required"
           />
         </div>
