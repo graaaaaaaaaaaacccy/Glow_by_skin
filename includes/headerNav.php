@@ -1,18 +1,27 @@
-<?php  session_start();
-	include_once 'includes/config.php';
-	//  all functions
-	require_once 'functions/functions.php';
+<?php  
+session_start();
+include_once 'includes/config.php';
+//  all functions
+require_once 'functions/functions.php';
 
-	//run whenever this file is used no need of isset or any condition to get website image footer etc
-	$sql5 ="SELECT * FROM  settings;";
+// Run whenever this file is used, no need of isset or any condition to get website image footer, etc
+$sql5 = "SELECT * FROM settings";
 
-	$result5 = $conn->query($sql5);
-	$row5 = $result5->fetch_assoc();
-	$_SESSION['web-name'] = $row5['website_name'];
-	$_SESSION['web-img'] = $row5['website_logo'];
-	$_SESSION['web-footer'] = $row5['website_footer'];
+$result5 = $conn->query($sql5);
 
-	// TODO: Also update setting to add info email, whatsapp, address etc to change it dynamically
+if ($result5 && $result5->num_rows > 0) {
+    $row5 = $result5->fetch_assoc();
+    $_SESSION['web-name'] = $row5['website_name'] ?? 'Default Web Name';
+    $_SESSION['web-img'] = $row5['website_logo'] ?? 'default_logo.png';
+    $_SESSION['web-footer'] = $row5['website_footer'] ?? 'Default Footer Text';
+} else {
+    // Handle the case where the settings query did not return any results
+    $_SESSION['web-name'] = 'Default Web Name';
+    $_SESSION['web-img'] = 'default_logo.png';
+    $_SESSION['web-footer'] = 'Default Footer Text';
+}
+
+// TODO: Also update settings to add info email, WhatsApp, address, etc., to change it dynamically
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +38,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="./images/flogo/fav.png" type="image/x-icon" />
 	
-    <title><?php echo $_SESSION['web-name']; ?></title>
-
-	
+    <title>Glow By Skin</title>
 
 
 	<!-- <link href="./css/font-awesome.css" rel="stylesheet" type="text/css"> -->
@@ -67,7 +74,7 @@
 <?php
   //  site details
     // $site_name = "HCA E-Commerce";
-    $site_address = "5900 BALCONES DRIVE STE 4129 AUSTIN TX, USA 78731";
-    $site_contact_num = "(336) 717-5310";
-    $site_info_email = "info@clickableshop.com";
+    $site_address = "Nairobi County, Kenya KE";
+    $site_contact_num = "+(254)700-000000";
+    $site_info_email = "info@glowbyskin.com";
 ?>

@@ -1,5 +1,6 @@
 <?php
-    require_once './includes/config.php';
+    require_once 'includes/config.php';
+    include_once('./includes/headerNav.php');
 
     // get banner products and details
     function get_banner_details(){
@@ -166,4 +167,58 @@
 
         return $result = mysqli_query($conn, $query);
     }
+
+    // Function to retrieve all images from the database
+    function get_images_from_db($category = null) {
+        global $conn; // Assuming $conn is your database connection
+
+        $images_by_folder = [];
+
+        $query = "SELECT image_path FROM images";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Convert local file path to URL
+                $image_path = $row['image_path'];
+                // Assuming your web server is accessible via http://localhost/Glow_by_skin/
+                $image_url = str_replace('C:/xampp/htdocs', 'http://localhost', $image_path);
+
+                // Extract folder name
+                $folder_name = basename(dirname($image_path));
+
+                // Group images by folder and filter by category if provided
+                if ($category === null || $folder_name === $category) {
+                    if (!isset($images_by_folder[$folder_name])) {
+                        $images_by_folder[$folder_name] = [];
+                    }
+                    $images_by_folder[$folder_name][] = $image_url;
+                }
+            }
+            mysqli_free_result($result);
+        } else {
+            echo "Error retrieving images: " . mysqli_error($conn);
+        }
+
+        return $images_by_folder;
+    }
+
+    // Check if a category is selected
+    $selected_category = isset($_POST['category']) ? $_POST['category'] : null;
+    $images_by_folder = get_images_from_db($selected_category);
+
+    function get_image_categories() {
+        $base_dir = 'C:/xampp/htdocs/Glow_by_skin/beauty_images/';
+        $categories = [];
+    
+        // Get all folders in the base directory
+        foreach (glob($base_dir . '*', GLOB_ONLYDIR) as $dir) {
+            $categories[] = basename($dir);
+        }
+    
+        return $categories;
+    }
+    
+    
+    
 ?>

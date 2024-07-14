@@ -1,4 +1,4 @@
-<!---footer start--->
+-footer start-
 
 <br>
 <div class="footer">

@@ -102,5 +102,3 @@
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
 
 </main>
-
-<?php require_once './includes/footer.php'; ?>
