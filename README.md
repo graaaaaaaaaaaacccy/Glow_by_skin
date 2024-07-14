@@ -1,5 +1,29 @@
 # E-commerce Website
 
+### Instructions for Deployment
+
+#### Database Configuration
+1. **Create the SQL Table**: Use PHPMyAdmin or any MySQL client to execute the following SQL command to create your table for storing image metadata:
+   ```sql
+   CREATE TABLE images (
+       image_id INT AUTO_INCREMENT PRIMARY KEY,
+       image_path VARCHAR(255) NOT NULL,
+       category VARCHAR(50),
+       upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       description TEXT
+   );
+   ```
+   This table (`images`) will store image metadata including the file path (`image_path`), category (`category`), upload date (`upload_date`), and description (`description`).
+
+2. **Ensure MySQL Server is Running**: Verify that your MySQL server is up and running on your local environment.
+
+3. **Import Database Schema**: If provided, import the database schema (`Glow_by_skin.sql`) into your MySQL database using PHPMyAdmin or a MySQL client.
+
+#### File Structure and Image Upload
+1. **Access Image Upload Page**: Navigate to `http://localhost/Glow_by_skin/functions/save_images_to_db.php` to access the page responsible for handling image uploads to the database.
+
+2. **Organize Images**: Place images in the `beauty_images` directory under `C:\xampp\htdocs\Glow_by_skin\`. Ensure that each image is organized into folders based on categories. 
+
 ## Introduction
 
 This document provides an overview of an e-commerce website built using HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL. The website consists of both user-side and admin-side functionalities, allowing customers to browse and purchase products while enabling administrators to manage inventory, orders, and customer data.
