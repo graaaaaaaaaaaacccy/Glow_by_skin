@@ -8,21 +8,15 @@
    CREATE TABLE images (
        image_id INT AUTO_INCREMENT PRIMARY KEY,
        image_path VARCHAR(255) NOT NULL,
-       category VARCHAR(50),
-       upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-       description TEXT
    );
    ```
    This table (`images`) will store image metadata including the file path (`image_path`), category (`category`), upload date (`upload_date`), and description (`description`).
 
 2. **Ensure MySQL Server is Running**: Verify that your MySQL server is up and running on your local environment.
 
-3. **Import Database Schema**: If provided, import the database schema (`Glow_by_skin.sql`) into your MySQL database using PHPMyAdmin or a MySQL client.
-
 #### File Structure and Image Upload
-1. **Access Image Upload Page**: Navigate to `http://localhost/Glow_by_skin/functions/save_images_to_db.php` to access the page responsible for handling image uploads to the database.
-
-2. **Organize Images**: Place images in the `beauty_images` directory under `C:\xampp\htdocs\Glow_by_skin\`. Ensure that each image is organized into folders based on categories. 
+1. **Organize Images**: Place images in the `beauty_images` directory under `C:\xampp\htdocs\Glow_by_skin\`. Ensure that each image is organized into folders based on categories. 
+2. **Access Image Upload Page**: Navigate to `http://localhost/Glow_by_skin/functions/save_images_to_db.php` to execute the stored images to access the page responsible for handling image uploads to the database.
 
 ## Introduction
 
