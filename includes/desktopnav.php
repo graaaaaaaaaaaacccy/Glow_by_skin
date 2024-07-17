@@ -1,68 +1,102 @@
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+.desktop-navigation-menu .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.desktop-menu-category-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu-logo h1 {
+  margin-right: 10px; /* Adjust spacing between title and image */
+}
+
+.menu-logo img {
+  width: 100px; /* Adjust image size */
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.menu-category {
+  margin: 0 20px; /* Adjust spacing between menu items */
+}
+
+.menu-title {
+  color: hsl(0, 0%, 13%);
+  text-decoration: none;
+  font-size: 1.2em; /* Adjust font size as needed */
+}
+
+.menu-title:hover {
+  color: hsl(0, 0%, 50%); /* Adjust hover color as needed */
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- desktop navigation -->
 <!-- desktop navigation -->
 <nav class="desktop-navigation-menu">
   <div class="container">
     <ul class="desktop-menu-category-list">
-
-      <li class="menu-category">
-        <a href="index.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">
-          Home
+      <li class="menu-logo">
+        <a href="./index.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="header-logo">
+          <h1 style="text-align: left;">Glow By Skin</h1>
+          <img src="admin/upload/<?php echo $_SESSION['web-img']; ?>" alt="logo" width="200px">
         </a>
       </li>
-
-      <li class="menu-category">
-        <a href="./category.php?category=<?php echo "men"; ?>" class="menu-title">Men's</a>
-      </li>
-
-      <li class="menu-category">
-        <a href="./category.php?category=<?php echo "women"; ?>" class="menu-title">Women's</a>
-      </li>
-
-      <li class="menu-category">
-        <a href="contact.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">
-          Contact
-        </a>
-      </li>
-
-
-
-      <li class="menu-category">
-        <a href="about.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">About</a>
-      </li>
-
-      <!-- Prfile Link Setup -->
-      <!-- if logged in -->
-      <?php if(isset($_SESSION['id'])) { ?>
-
-        <li class="menu-category" style="opacity:1">
-          <a href="profile.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">
-            Profile
-          </a>
-        </li>
-
-      <!-- if not logged in reduce opacity  -->
-      <?php } else { ?>
-
-        <li class="menu-category" style="opacity:0.5">
-          <a style="cursor: not-allowed;" href="#?loginfirst" class="menu-title">
-            Profile(Signin Plz)
-          </a>
-        </li>
-
-      <?php } ?> 
-
-      <!-- Visit Admin Panel After Login -->
-	 <?php  if(isset($_SESSION['logged-in'])){?>
+      <div class="menu-items">
         <li class="menu-category">
-          <a href="admin/post.php" class="menu-title">
-            Admin Panel
+          <a href="index.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">
+            Home
           </a>
-        </li> 
-	<?php } ?>
-      
-      
+        </li>
 
+        <li class="menu-category">
+          <a href="contact.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">
+            Contact
+          </a>
+        </li>
+
+        <li class="menu-category">
+          <a href="about.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="menu-title">About</a>
+        </li>
+      </div>
     </ul>
   </div>
 </nav>
+
+
+</body>
+</html>

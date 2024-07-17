@@ -1,17 +1,9 @@
-     <?php
-      $total_cart_items = 0;
-     if(isset($_SESSION['mycart']))
-     {
-      $total_cart_items = count($_SESSION['mycart']);
-     }
-    
-
-     ?>
+     <!-- 
 
      
      
-     
-     <div class="header-top">
+      -->
+     <!-- <div class="header-top">
         <div class="container">
           <ul class="header-social-container">
             <li>
@@ -59,82 +51,42 @@
             </select>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="header-main">
+      <!-- <div class="header-main">
         <div class="container">
-          <!-- logo section -->
+           logo section 
           <a href="./index.php?id=<?php echo (isset( $_SESSION['customer_name']))? $_SESSION['id']: 'unknown';?>" class="header-logo" style="color: hsl(0, 0%, 13%);">
 
-            <h1 style="text-align: center;">
+            <h1 style="text-align: center;">Glow By Skin</h1>
 
             <img src="admin/upload/<?php echo $_SESSION['web-img']; ?>" alt="logo" width="200px">
 
             </h1>
 
-          </a>
+          </a> -->
 
+        
           <!-- search input -->
-          <div class="header-search-container">
-            <form class="search-form" method="post" action="./search.php">
-              <input type="search" name="search" class="search-field" placeholder="Enter your product name..." required oninvalid="this.setCustomValidity('Enter product name...')" oninput="this.setCustomValidity('')" />
+          <!-- <div class="header-search-container">
+              <form class="search-form" method="post" action="./index.php">
+                  <select name="category" class="search-field" required oninvalid="this.setCustomValidity('Select a category...')" oninput="this.setCustomValidity('')">
+                      <option value="" disabled selected>Select a category...</option>
+                      <?php
+                      $categories = get_image_categories();
+                      foreach ($categories as $category) {
+                          echo '<option value="' . $category . '">' . ucfirst($category) . '</option>';
+                      }
+                      ?>
+                  </select>
 
-              <button class="search-btn" type="submit" name="submit">
-                <ion-icon name="search-outline"></ion-icon>
-              </button>
-            </form>
-          </div>
-
-          <div class="header-user-actions">
-
-            <!-- Logout button -->
-    <?php if( isset( $_SESSION['id'])) { ?>
-
-            <button id="lg-btn" class="action-btn">
-              <a   href="logout.php"  id="a" role="button" >
-                <ion-icon name="log-out-outline"></ion-icon>
-              </a>
-            </button> 
-
-            <!-- TODO: This script doesnot execute: Work o this, Directly logout user -->
-		        <script src="./js/logout.js"></script>
-
-	  <?php } else { ?>
-            <!-- Login Button -->
-            <button class="action-btn">
-              <a href="./login.php"  id="a">
-                <ion-icon name="person-outline"></ion-icon>
-              </a>
-            </button>
-
-	  <?php } ?>
+                  <button class="search-btn" type="submit" name="submit">
+                      <ion-icon name="search-outline"></ion-icon>
+                  </button>
+              </form>
+          </div> -->
 
            
 
-            <!-- Favourite Counter -->
-            <button class="action-btn">
-              <ion-icon name="heart-outline"></ion-icon>
-              <span class="count">0</span>
-            </button>
-
-            <!-- Cart Button -->
-	  <?php if(!(isset($_SESSION['logged-in']))){?>
-            
-            <button class="action-btn">
-              <a href="./cart.php" >
-                <ion-icon name="bag-handle-outline"></ion-icon>
-              </a>
-              <span class="count"> 
-              <?php
-                echo $total_cart_items ;
-              ?>
-              </span>
-            </button>
-
-    <?php } ?>
-
-          </div>
-        </div>
-      </div>
 
       
