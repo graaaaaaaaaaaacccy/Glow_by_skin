@@ -10,7 +10,7 @@
        image_path VARCHAR(255) NOT NULL,
    );
    ```
-   This table (`images`) will store image metadata including the file path (`image_path`), category (`category`), upload date (`upload_date`), and description (`description`).
+   This table (`images`) will store image metadata including the file id and file path (`image_id`), and (`image_path`).
 
 2. **Ensure MySQL Server is Running**: Verify that your MySQL server is up and running on your local environment.
 
