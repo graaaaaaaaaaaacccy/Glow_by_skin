@@ -23,23 +23,24 @@ This project is an e-commerce store for beauty products. The application allows 
 ## Database Setup
 1. Start XAMPP and ensure that Apache and MySQL services are running.
 2. Open phpMyAdmin and create a new database named `glow_by_skin`.
-3. Create a `products` table using the following SQL script:
+3. To add prices for products you will need to execute a different query for insert values.
+4. Create a `products` table using the following SQL script:
 
    ```sql
    CREATE TABLE products (
        product_id INT AUTO_INCREMENT PRIMARY KEY,
        image_path VARCHAR(255) NOT NULL,
-       price DECIMAL(10, 2) NOT NULL,
-       name VARCHAR(255) NOT NULL,
-       description TEXT NOT NULL
+       price DECIMAL(10, 2),
+       name VARCHAR(255),
+       description TEXT
    );
    ```
-4. Create another table named `cart` using the following SQL script:
+5. Create another table named `cart` using the following SQL script:
    ```sql
    CREATE TABLE cart (
       cart_id INT AUTO_INCREMENT PRIMARY KEY,
       product_id INT NOT NULL,
-      session_id VARCHAR(255) NOT NULL,
+      session_id VARCHAR(255),
       FOREIGN KEY (product_id) REFERENCES products(product_id)
    );
    ```
@@ -69,7 +70,7 @@ This project is an e-commerce store for beauty products. The application allows 
 
 ## Adding Images
 
-1. Place your images in the beauty_images directory.
+1. Your images in the beauty_images directory.
 2. The image-query.php script will automatically insert image paths into the database when you load the project.
 3. This script is included in index.php to ensure images are only added if they do not already exist in the database.
 
