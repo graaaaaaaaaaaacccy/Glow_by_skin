@@ -21,6 +21,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="fav.png" type="image/x-icon">
+    <title>Glow By Skin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,12 +52,17 @@ $conn->close();
         }
 
         .add-to-cart {
-            background-color: #007bff;
-            color: white;
+            background-color: #d3d3d3; /* Light grey */
+            color: #343a40; /* Dark text color */
+            display: block;
+            margin: 10px auto 0;
+            text-align: center;
+            width: 80%;
         }
 
         .add-to-cart:hover {
-            background-color: #0056b3;
+            background-color: #6c757d; /* Medium grey */
+            color: white;
         }
 
         .cart-icon {
@@ -75,8 +82,6 @@ $conn->close();
 <header>
     <?php require_once 'desktopnav.php' ?>
 </header>
-
-<!-- <div id="cart-count" class="cart-icon">0</div> -->
 
 <main>
     <div class="product-showcase container">
@@ -104,6 +109,8 @@ $conn->close();
                 button.addEventListener('click', function(event) {
                     event.preventDefault();
                     const productId = this.getAttribute('data-id');
+                    const originalText = this.textContent;
+                    this.textContent = 'Added';
 
                     fetch('add_to_cart.php', {
                         method: 'POST',
@@ -120,6 +127,9 @@ $conn->close();
                         } else {
                             alert('Failed to add to cart');
                         }
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                        }, 1000);
                     });
                 });
             });
