@@ -3,15 +3,15 @@
 Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce store for beauty products. The application allows users to view products, add them to the cart, and checkout. No payment is processed, and a confirmation email is sent upon checkout.
 
 ## 📋 Table of Contents
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Database Setup](#database-setup)
-- [Folder Structure](#folder-structure)
-- [Running the Project](#running-the-project)
-- [Adding Images](#adding-images)
-- [User Workflow](#user-workflow)
-- [Features](#features)
-- [Screenshots](#screenshots)
+- [Prerequisites](##prerequisites)
+- [Installation](##installation)
+- [Database Setup](##database-setup)
+- [Folder Structure](##folder-structure)
+- [Running the Project](##running-the-project)
+- [Adding Images](##adding-images)
+- [User Workflow](##user-workflow)
+- [Features](##features)
+- [Screenshots](##screenshots)
 
 ## 📌 Prerequisites
 - 🛠️ XAMPP or any web server with PHP and MySQL
@@ -26,13 +26,10 @@ Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce 
 ## 🗄️ Database Setup
 1. Start XAMPP and ensure that Apache and MySQL services are running.
 2. Open phpMyAdmin and create a new database named `glow_by_skin`.
-<<<<<<< HEAD
 3. Create a `products` table using the following SQL script:
 =======
 3. To add prices for products you will need to execute a different query for insert values.
 4. Create a `products` table using the following SQL script:
-
->>>>>>> 8506d7cd94ca4058fb6da7a861c799c1884fc440
    ```sql
    CREATE TABLE products (
        product_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,12 +39,8 @@ Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce 
        description TEXT
    );
    ```
-<<<<<<< HEAD
 
 4. Create another table named `cart` using the following SQL script:
-=======
-5. Create another table named `cart` using the following SQL script:
->>>>>>> 8506d7cd94ca4058fb6da7a861c799c1884fc440
    ```sql
    CREATE TABLE cart (
       cart_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -78,7 +71,6 @@ Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce 
    │   └── register.php
    │   └── logout.php
    ├── beauty_images/
-
    ├── includes/
    │   ├── config.php
    │   ├── desktopnav.php
@@ -118,29 +110,18 @@ Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce 
 - 📧 **Email Confirmation**: Users receive a confirmation email upon checkout.
 - 🖥️ **Responsive Design**: The application is designed to be responsive and user-friendly.
 
-<<<<<<< HEAD
 ## 📷 Screenshots
 ### Home Page
 ![Home Page](screenshots/homepage.png)
-=======
-1. Your images in the beauty_images directory.
-2. The image-query.php script will automatically insert image paths into the database when you load the project.
-3. This script is included in index.php to ensure images are only added if they do not already exist in the database.
->>>>>>> 8506d7cd94ca4058fb6da7a861c799c1884fc440
 
 ### Login Page
 ![Login Page](screenshots/loginpage.png)
 
-<<<<<<< HEAD
 ### Registration Page
-![Registration Page](screenshots/registrationpage.png)
+![Registration Page](screenshots/registerpage.png)
 
 ### Cart Page
 ![Cart Page](screenshots/cartpage.png)
 
----
 
 By following these steps and the provided `README`, you should be able to set up and run your project smoothly without encountering the issue of the images not being loaded to the website. 🎉
-=======
-By following these steps and the provided `README`, you should be able to set up and run your project smoothly without encountering the issue of the images not being loaded to the website.
->>>>>>> 8506d7cd94ca4058fb6da7a861c799c1884fc440
