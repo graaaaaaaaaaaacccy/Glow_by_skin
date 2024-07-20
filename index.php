@@ -1,5 +1,11 @@
 <?php
-include_once('./database/image-query.php');
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: authentication/login.php");
+    exit();
+}
+include_once('database/image-query.php');
 include "includes/config.php";
 
 $sql = "SELECT * FROM products";
@@ -21,7 +27,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" href="fav.png" type="image/x-icon">
+    <link rel="icon" href="images/fav.png" type="image/x-icon">
     <title>Glow By Skin</title>
     <style>
         body {
@@ -80,7 +86,7 @@ $conn->close();
 
 <body>
 <header>
-    <?php require_once 'desktopnav.php' ?>
+    <?php require_once 'includes/desktopnav.php' ?>
 </header>
 
 <main>
@@ -92,6 +98,7 @@ $conn->close();
                     <div class="card product-card">
                         <img src="<?php echo $product['image_path']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
                         <div class="card-body">
+                            <p class="card-text"><?php echo $product['name']; ?></p>
                             <p class="card-text">Ksh<?php echo $product['price']; ?></p>
                             <button class="btn add-to-cart" data-id="<?php echo $product['product_id']; ?>">Add to Cart</button>
                         </div>

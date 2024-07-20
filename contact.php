@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: authentication/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="fav.png" type="image/x-icon">
+    <link rel="icon" href="images/fav.png" type="image/x-icon">
     <title>Contact: Glow By Skin</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -89,7 +97,7 @@
 <body>
 
 <header>
-    <?php require_once 'desktopnav.php'; ?>
+    <?php require_once 'includes/desktopnav.php'; ?>
 </header>
 
 <main>

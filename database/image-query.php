@@ -1,7 +1,7 @@
 <?php
 include "includes/config.php";
 
-$baseDir = 'C:/xampp/htdocs/Glow_by_skin/beauty_images';
+$baseDir = 'C:/xampp/htdocs/Glow/beauty_images';
 
 // Function to recursively read directories and insert image paths into database
 function insertImages($dir, $conn) {
@@ -13,7 +13,7 @@ function insertImages($dir, $conn) {
             if (is_dir($fullPath)) {
                 insertImages($fullPath, $conn); // Recursively read subdirectories
             } else {
-                $imagePath = str_replace('C:/xampp/htdocs/Glow_by_skin/', '', $fullPath);
+                $imagePath = str_replace('C:/xampp/htdocs/Glow/', '', $fullPath);
                 $folderName = basename(dirname($fullPath));
 
                 // Check if image already exists in the database

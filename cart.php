@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: authentication/login.php");
+    exit();
+}
 $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 ?>
 
@@ -29,7 +33,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                         <tr>
                             <td><img src="<?php echo $item['image_path']; ?>" alt="<?php echo $item['name']; ?>" width="50"></td>
                             <td><?php echo $item['name']; ?></td>
-                            <td>$<?php echo $item['price']; ?></td>
+                            <td>Ksh<?php echo $item['price']; ?></td>
                             <td><?php echo $item['quantity']; ?></td>
                         </tr>
                     <?php endforeach; ?>

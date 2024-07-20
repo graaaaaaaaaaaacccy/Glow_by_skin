@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="default_logo.png" width="50" height="50" alt="logo">
+      <img src="images/default_logo.png" width="50" height="50" alt="logo">
       <span>Glow By Skin</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +28,25 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="cart.php">
-            <img src="cart.png" width="30" height="30" alt="Cart">
+            <img src="images/cart.png" width="30" height="30" alt="Cart">
             <span id="cart-count">0</span>
           </a>
         </li>
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello, <?php echo $_SESSION['username']; ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="authentication/logout.php">Logout</a>
+        </li>
+        <?php else: ?>
+        <li class="nav-item">
+          <a class="nav-link" href="authentication/login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="authentication/registration.php">Register</a>
+        </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
