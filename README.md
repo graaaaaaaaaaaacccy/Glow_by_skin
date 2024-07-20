@@ -118,7 +118,7 @@ Welcome to the **Glow By Skin** E-Commerce Store! This project is an e-commerce 
 ![Login Page](screenshots/loginpage.png)
 
 ### Registration Page
-![Registration Page](screenshots/registrationpage.png)
+![Registration Page](screenshots/registerpage.png)
 
 ### Cart Page
 ![Cart Page](screenshots/cartpage.png)
